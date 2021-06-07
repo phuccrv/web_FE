@@ -1,0 +1,436 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    color: #5a5a5a;
+    background-color: #ffffff;
+    text-rendering: optimizeLegibility;
+}
+/* -------------------------------------------------- */
+/* ----------------------header---------------------- */
+/* -------------------------------------------------- */
+body{
+    overflow-x: hidden;
+}
+section{
+    padding: 50px;
+}
+.small-icon{
+    color: #395e80; 
+    margin-right: 10px;
+    size: 300%;
+}
+header{
+    background-image: linear-gradient(to right top , rgba(134, 195, 252, 0.507),rgb(74, 92, 248)),url("../img/background4.jpeg");
+    background-size: cover;
+    background-position:center ;
+    height: 100vh;
+    /* cho phép chiều cao chiếm bao nhiêu phần trăm của trang web tùy thích tùy theo kích cở của người lập trình cho */
+    background-attachment: fixed;
+    /* tạo hiệu ứng di chuyển vật thể khi lăn con trỏ hoặc kéo chuột xuống nó vẫn đi theo cho đến hết */
+}
+.logo{
+    width: 200px;
+    float: left;
+    margin-left: 100px;
+
+}
+.row{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.main-nav{
+    float: right;
+    list-style: none;
+    /* xóa dấu chấm của lệnh <li> */
+    margin-right: 50px;
+    margin-top: 50px;
+}
+.main-nav li a{
+    text-decoration: none;
+    /* làm mất đi gạch chân ở thẻ <a> màu xanh mất đi */
+    color: whitesmoke;
+    font-size: 110%;
+    font-weight: 700%;
+    transition: border-bottom 0.5s;
+    /* chỉnh tốc độ nhảy xuống của thanh gạch ngang ở menu */
+    padding: 3px 0;
+}
+.main-nav li a:hover, 
+.main-nav li a:active{ 
+    border-bottom: 3px solid #56e0f8;
+    /* tạo thanh gach ngang dưới chân của menu */
+}
+
+.main-nav li{
+    display: inline-block;
+    /* cho hiển thị trên cùng một hàng, của danh sách sử dụng cặp thẻ<li> */
+    margin-right: 30px;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.heading-main-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%, -55%);
+    width: 1140px;
+}
+h1,h2,h3{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+h1{
+    font-size: 300%;
+    font-weight: 500;
+    word-spacing: 5px;
+    color: #ffffff;
+    line-height: 135%;
+    margin-bottom: 40px;
+}
+h2{
+    text-align: center;
+    color: rgb(252, 105, 0);
+    font-size: 180%;
+    font-weight: 700;
+    margin-top: 10px;
+}
+h2::after{
+    content: "";
+    display: block;
+    width: 150px;
+    height: 3px;
+    background-color: rgb(255, 169, 98);
+    margin: 0 auto;
+}
+h3{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color:  #265077;
+    color: blanchedalmond;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.p-long{
+    text-align: center;
+    color:  #265077;
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 70%;
+    margin-left: 15%;
+    line-height: 30px;
+}
+.btn{
+    text-decoration: none;
+    color: #ffffff;
+    background-color: rgb(255, 121, 25);
+    padding: 10px;
+    border-radius: 15px;
+    margin:10px;
+    width: 190px;
+    display: inline-block;
+    text-align: center;
+    transition: all .3s;
+}
+.btn:hover,
+.btn:active{
+    background-color: rgb(184, 77, 1);
+}
+/* -------------------------------------------------- */
+/* ------------------sticky-------------------------- */
+/* -------------------------------------------------- */
+.sticky{
+    background-color: rgb(2,33,64,.9);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    /* z-index: 900px; */
+    width: 100%;
+    height: 70px;
+}
+.sticky .logo{
+    width: 100px;
+}
+.sticky .main-nav{
+    margin-top: 21px;
+}
+/* -------------------------------------------------- */
+/* ---------------mobile navigation icon------------- */
+/* -------------------------------------------------- */
+.mobile-nav-icon{
+    font-size: 200%;
+    color: #67c4d4;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    display: none;
+}
+
+/* -------------------------------------------------- */
+/* ----------------section dưới 4 ảnh ---------------*/
+/* -------------------------------------------------- */
+.about-picture{
+    position: relative;
+    margin-top: 100px;
+    
+}
+.about-picture img{
+    width: 90%;
+    border-radius: 20px;
+    border: 4px solid #85cef8;
+    box-shadow: 0px 5px 15px 0px #265077;
+    /* box-shadow có 5 chức năng: x, y, độ mờ, độ phóng rộng, màu  */
+    filter: brightness(50%) blur(0px);
+    /* làm mờ ảnh  */
+    transition: all .5s;
+}
+.picture-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #c2e1fd;
+    transform: translate(-65%,100%);
+    opacity: 0;
+    transition: all .5s;
+}
+.about-picture:hover img,
+.about-picture:active img{
+    filter: brightness(70%) blur(1px);
+}
+.about-picture:hover .picture-title,
+.about-picture:active .picture-title{
+    transform: translate(-65%, -50%);
+    opacity: 2;
+}
+/* ------------------------------------------------- */
+/* ---------------product-section------------------- */
+/* ------------------------------------------------- */
+.products-section{
+    background-color: #dfdddde0;
+    padding-left: 50px;
+}
+.product-section h2{
+    margin-bottom: 60px;     
+}
+.product-box{
+    background-color: #eeefff;
+    max-width: 90%;
+    height:350px;
+    padding: 30px;
+    box-shadow: 3px 5px 10px #e0e0e0;
+}
+.products-section h2{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.product-price{
+    color: #265077;
+    font-size: 150%;
+    font-weight: 300;
+    text-align: center;
+}
+.product-box ul li{
+    margin-left: 20%;
+    list-style: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.product-box .btn{
+    margin: auto 30px;
+}
+/* -------------------------------------------- */
+/* ---------phần Testimaonials Section--------- */
+/* -------------------------------------------- */
+.testimonials-section{
+    background-image:linear-gradient(to right top , rgba(22, 54, 85, 0.507),rgba(28, 35, 100, 0.842)), url('../img/background2.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.testimonials-section h2{
+    margin-bottom: 70px;
+}
+blockquote{
+    font-style: italic;
+    line-height: 140%;
+    color: white;
+    width: 95%;
+    position: relative;
+}
+blockquote::before{
+    content: '\201C';
+    display: block;
+    font-size: 350%;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+cite{
+    display: block;
+    color:rgb(61, 216, 216);
+    margin-top: 25px;
+}
+cite img{
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #265077;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+/* -------------------------------------- */
+/* -----------SPONSOR SECTION------------ */
+/* -------------------------------------- */
+.sponsors-section{
+    background-color: #e0e0e0;
+}
+.sponsors-section h2{
+    margin-bottom: 50px;
+}
+.sponsors-showcase li{
+    list-style: none;
+    float: left;
+    width: 30%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.logo-sponsor{
+    width: 140px;
+    cursor: pointer;
+    transition: 0.5s;
+    /* thêm dòng cursor: pointer này vào thì mới thực hiện được hiệu ứng nhảy to nhỏ */
+}
+.sponsors-showcase li .logo-sponsor:hover,
+.sponsors-showcase li .logo-sponsor:active{
+    transform: scale(1.2);
+    /* dùng để tạo hiệu hứng di cuột vào để hiện to nhỏ dum to, nhỏ */
+}
+.row{
+    margin-left: 9%;
+}
+figcaption{
+    color: #265077;
+    font-weight: 900;
+    font-size: 120%;
+    cursor: pointer;
+}
+/* -------------------------------------------- */
+/* -------------contact form------------------- */
+/* -------------------------------------------- */
+.contact-section{
+    background-image:linear-gradient(to right top , rgba(22, 54, 85, 0.507),rgba(28, 35, 100, 0.842)), url('../img/background5.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+/* -------------------------------------------- */
+/* ---------------FOOTER----------------------- */
+/* -------------------------------------------- */
+footer{
+    background-color: #5a5a5a;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+.information{
+    list-style: none;
+    color: white;
+    line-height: 200%;
+    margin-top: 70px;
+    word-spacing: 1px;
+    font-size: 95%;
+}
+.information .small-icon{
+    color: rgb(100, 151, 245);
+    transition: 0.5s;
+    cursor: pointer;
+    font-size: 30px;
+    display: block;
+}
+.information li .small-icon:hover,
+.information li .small-icon:active{
+    transform: scale(1.3);
+}
+.social-icons{
+    list-style: none;
+    margin-top: 50px;
+}
+.social-icons li{
+    display: inline-block;
+    font-size: 250%;
+    margin-left: 20px;
+    color: white;   
+}
+.social-icons li i{
+    transition: all .3s;
+    cursor: pointer;
+    display: block;
+}
+.social-icons li i:hover,
+.social-icons li i:active{
+    color: tomato;
+    transform: scale(1.3);
+}
+/* ----------------------------------------- */
+/* --------------form----------------------- */
+/* ----------------------------------------- */
+form{
+    background-color: rgba(0, 0, 0, .4);
+    margin-left: 40%;
+    padding: 30px;
+    width: 68%px;
+}
+label{
+    font-size: 150%;
+    color: white;
+}
+input, textarea{
+    outline: none;
+    /* làm mất đi màu xanh khi click vào ô hoặc nút bất kỳ */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, .3);
+    border: 2px solid rgb(61, 61, 61);
+    margin-left: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+textarea{
+    resize: none;
+    /* dùng để xóa dấu ba gạch nhỏ ở chân góc phải của textarea */
+    height: 100px;
+    width: 82%;
+}
+input[type=text], input[type=email], textarea{
+    width: 80%;
+    font-size: 90%;
+    transition: all .3s;
+}
+input[type=text]:focus, input[type=email]:focus, textarea:focus{
+    color: white;
+    background-color: rgba(0, 0, 0, .8);
+}
+input{
+    height: 50px;
+}
+/* form.row:last-child{
+    text-align: center;
+} */
+.row2{
+    text-align: center;
+}
+input[type=submit]{
+    font-weight: 200%;
+    font-size: 100%;
+    border-radius: 5px;
+    width: 60%;
+}
